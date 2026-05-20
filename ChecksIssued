@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checks Issued</title>
+
+<style>
+
+body{
+  margin:0;
+  overflow:hidden;
+  background:#121212;
+}
+
+iframe{
+  width:100vw;
+  height:calc(100vh + 120px);
+  border:none;
+  margin-bottom:-120px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<iframe
+src="https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={8404afc2-e4dc-4752-977f-1a2d695aa547}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False">
+</iframe>
+
+</body>
+
+</html>
