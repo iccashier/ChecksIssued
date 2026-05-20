@@ -18,9 +18,17 @@
 
 body{
   font-family:Arial, sans-serif;
-  background:#121212;
-  color:white;
   overflow:hidden;
+
+  background:
+  linear-gradient(
+    135deg,
+    #021B3A 0%,
+    #003B8E 45%,
+    #0057D9 100%
+  );
+
+  color:white;
 }
 
 /* MAIN LAYOUT */
@@ -33,10 +41,16 @@ body{
 /* SIDEBAR */
 
 .sidebar{
-  width:240px;
-  background:#1E1E1E;
-  padding:20px;
-  border-right:1px solid #2E2E2E;
+
+  width:270px;
+
+  background:rgba(10,15,30,0.75);
+
+  backdrop-filter:blur(14px);
+
+  border-right:1px solid rgba(255,255,255,0.1);
+
+  padding:25px;
 
   display:flex;
   flex-direction:column;
@@ -45,16 +59,26 @@ body{
 /* LOGO */
 
 .logo{
-  width:70px;
+  width:75px;
   margin-bottom:20px;
 }
 
 /* TITLE */
 
 .title{
-  font-size:24px;
+  font-size:22px;
   font-weight:bold;
   line-height:1.4;
+  margin-bottom:10px;
+}
+
+/* SUBTITLE */
+
+.subtitle{
+  color:#D1D5DB;
+  font-size:15px;
+  line-height:1.6;
+
   margin-bottom:40px;
 }
 
@@ -63,57 +87,132 @@ body{
 .nav{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:15px;
 }
+
+/* LINKS */
 
 .nav a{
   text-decoration:none;
 }
 
+/* BUTTONS */
+
 .nav button{
+
   width:100%;
-  padding:14px;
+
+  padding:18px;
+
   border:none;
-  background:#2E2E2E;
+
+  background:rgba(255,255,255,0.08);
+
   color:white;
-  border-radius:10px;
+
+  border-radius:16px;
+
   cursor:pointer;
+
   transition:0.3s;
-  font-size:14px;
+
+  font-size:16px;
+
   text-align:left;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,0.08);
 }
 
 .nav button:hover{
-  background:#7B61FF;
+
+  transform:translateX(6px);
+
+  background:rgba(255,255,255,0.15);
+
+  box-shadow:
+  0 0 25px rgba(255,215,0,0.25);
+
 }
 
-/* CONTENT */
+/* MAIN CONTENT */
 
 .content{
+
   flex:1;
 
   display:flex;
+
   justify-content:center;
+
   align-items:center;
 
-  padding:50px;
+  padding:60px;
 }
 
-/* WELCOME BOX */
+/* GLASS CARD */
 
 .welcome-box{
-  max-width:700px;
+
+  width:850px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(18px);
+
+  border-radius:28px;
+
+  padding:60px;
+
+  box-shadow:
+  0 0 40px rgba(0,0,0,0.3);
 }
 
-.welcome-box h1{
-  font-size:42px;
-  margin-bottom:25px;
+/* WELCOME */
+
+.welcome-title{
+
+  font-size:56px;
+
+  font-weight:bold;
+
+  line-height:1.2;
+
+  margin-bottom:20px;
 }
 
-.welcome-box p{
-  font-size:18px;
-  line-height:1.8;
-  color:#D0D0D0;
+/* ACCENT LINE */
+
+.accent-line{
+
+  width:130px;
+
+  height:5px;
+
+  background:
+  linear-gradient(
+    to right,
+    #FFD700,
+    #4DA3FF
+  );
+
+  border-radius:20px;
+
+  margin-bottom:35px;
+}
+
+/* DESCRIPTION */
+
+.description{
+
+  font-size:22px;
+
+  line-height:1.9;
+
+  color:#E5E7EB;
 }
 
 /* MOBILE */
@@ -125,22 +224,36 @@ body{
   }
 
   .sidebar{
+
     width:100%;
+
     border-right:none;
-    border-bottom:1px solid #2E2E2E;
+
+    border-bottom:1px solid rgba(255,255,255,0.1);
   }
 
   .content{
+
+    padding:25px;
+
     align-items:flex-start;
-    padding:30px;
   }
 
-  .welcome-box h1{
-    font-size:30px;
+  .welcome-box{
+
+    width:100%;
+
+    padding:35px;
   }
 
-  .welcome-box p{
-    font-size:16px;
+  .welcome-title{
+
+    font-size:36px;
+  }
+
+  .description{
+
+    font-size:18px;
   }
 
 }
@@ -165,20 +278,29 @@ body{
       IC Cashier Monitoring Portal
     </div>
 
+    <div class="subtitle">
+      Administrative Division<br>
+      Cashier Section
+    </div>
+
     <!-- NAVIGATION -->
 
     <div class="nav">
 
       <a href="checks-issued.html">
+
         <button>
           Checks Issued
         </button>
+
       </a>
 
       <a href="unliquidated-pcf.html">
+
         <button>
           Unliquidated PCF CA
         </button>
+
       </a>
 
     </div>
@@ -191,17 +313,22 @@ body{
 
     <div class="welcome-box">
 
-      <h1>
+      <div class="welcome-title">
         Welcome to IC Cashier Monitoring Portal
-      </h1>
+      </div>
 
-      <p>
-        This portal serves as the centralized monitoring platform
-        for the Administrative Division-Cashier Section of the Insurance Commission.
+      <div class="accent-line"></div>
+
+      <div class="description">
+
+        This portal serves as the centralized monitoring
+        platform for the Administrative Division - Cashier
+        Section of the Insurance Commission.
         <br><br>
-        Please select a monitoring module from the navigation panel
-        to access the corresponding dashboards and reports.
-      </p>
+        Please select a monitoring module from the navigation
+        panel to access the corresponding dashboards and reports.
+
+      </div>
 
     </div>
 
