@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>IC Cashier Dashboard</title>
+  <title>IC Cashier Monitoring Portal</title>
 
   <style>
 
@@ -59,8 +59,14 @@
       background:#1E1E1E;
       display:flex;
       align-items:center;
+      justify-content:space-between;
       padding:0 20px;
       border-bottom:1px solid #2E2E2E;
+    }
+
+    .left-header{
+      display:flex;
+      align-items:center;
     }
 
     .logo{
@@ -73,6 +79,28 @@
     .title{
       font-size:22px;
       font-weight:bold;
+    }
+
+    /* NAVIGATION */
+
+    .nav{
+      display:flex;
+      gap:10px;
+    }
+
+    .nav button{
+      padding:10px 15px;
+      border:none;
+      background:#2E2E2E;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+      font-size:14px;
+    }
+
+    .nav button:hover{
+      background:#7B61FF;
     }
 
     /* DASHBOARD */
@@ -92,13 +120,20 @@
       margin-bottom:-40px;
     }
 
-    /* MOBILE RESPONSIVE */
+    /* MOBILE */
 
     @media(max-width:768px){
 
       .header{
-        height:60px;
-        padding:0 15px;
+        height:auto;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:15px;
+        gap:10px;
+      }
+
+      .left-header{
+        width:100%;
       }
 
       .logo{
@@ -110,12 +145,21 @@
         font-size:16px;
       }
 
+      .nav{
+        width:100%;
+        overflow-x:auto;
+      }
+
+      .nav button{
+        white-space:nowrap;
+      }
+
       .iframe-container{
-        height:calc(100vh - 60px);
+        height:calc(100vh - 120px);
       }
 
       iframe{
-        height:calc(100vh - 60px + 40px);
+        height:calc(100vh - 120px + 40px);
       }
 
     }
@@ -126,13 +170,13 @@
 
 <body>
 
-<!-- LOADING SCREEN -->
+<!-- LOADING -->
 
 <div id="loader">
 
   <div class="spinner"></div>
 
-  <div>Loading Dashboard...</div>
+  <div>Loading Monitoring Portal...</div>
 
 </div>
 
@@ -140,12 +184,30 @@
 
 <div class="header">
 
-  <img 
-    class="logo"
-    src="https://www.insurance.gov.ph/wp-content/uploads/2022/01/IC-logo-white-1.png">
+  <div class="left-header">
 
-  <div class="title">
-    IC Cashier Dashboard
+    <img 
+      class="logo"
+      src="https://www.insurance.gov.ph/wp-content/uploads/2022/01/IC-logo-white-1.png">
+
+    <div class="title">
+      IC Cashier Monitoring Portal
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION -->
+
+  <div class="nav">
+
+    <button onclick="loadChecksIssued()">
+      Checks Issued
+    </button>
+
+    <button onclick="loadPCF()">
+      Unliquidated PCF CA
+    </button>
+
   </div>
 
 </div>
@@ -155,6 +217,7 @@
 <div class="iframe-container">
 
 <iframe
+id="dashboardFrame"
 onload="hideLoader()"
 src="https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={8404afc2-e4dc-4752-977f-1a2d695aa547}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False">
 </iframe>
@@ -165,6 +228,28 @@ src="https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph
 
   function hideLoader(){
     document.getElementById("loader").style.display = "none";
+  }
+
+  function showLoader(){
+    document.getElementById("loader").style.display = "flex";
+  }
+
+  function loadChecksIssued(){
+
+    showLoader();
+
+    document.getElementById("dashboardFrame").src =
+    "https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={8404afc2-e4dc-4752-977f-1a2d695aa547}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False";
+
+  }
+
+  function loadPCF(){
+
+    showLoader();
+
+    document.getElementById("dashboardFrame").src =
+    "https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={3732ca75-2b7f-4b97-82fd-79c100b519ca}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False&ActiveCell='UNLIQUIDATED PCF CA'!A1";
+
   }
 
 </script>
