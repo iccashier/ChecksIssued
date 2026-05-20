@@ -54,6 +54,15 @@ body{
 
   display:flex;
   flex-direction:column;
+
+  justify-content:space-between;
+}
+
+/* TOP SIDEBAR CONTENT */
+
+.sidebar-top{
+  display:flex;
+  flex-direction:column;
 }
 
 /* LOGO */
@@ -223,6 +232,21 @@ body{
   color:#E5E7EB;
 }
 
+/* SIDEBAR FOOTER */
+
+.sidebar-footer{
+
+  font-size:12px;
+
+  color:rgba(255,255,255,0.55);
+
+  line-height:1.8;
+
+  border-top:1px solid rgba(255,255,255,0.08);
+
+  padding-top:20px;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
@@ -278,50 +302,66 @@ body{
 
   <div class="sidebar">
 
-    <!-- CLICKABLE LOGO -->
+    <!-- TOP SIDEBAR -->
 
-    <a href="index.html">
+    <div class="sidebar-top">
 
-      <img
-        class="logo"
-        src="https://www.insurance.gov.ph/wp-content/uploads/2022/01/IC-logo-white-1.png">
+      <!-- CLICKABLE LOGO -->
 
-    </a>
+      <a href="index.html">
 
-    <!-- CLICKABLE TITLE -->
+        <img
+          class="logo"
+          src="https://www.insurance.gov.ph/wp-content/uploads/2022/01/IC-logo-white-1.png">
 
-    <a href="index.html" class="portal-link">
+      </a>
 
-      <div class="title">
-        IC Cashier Monitoring Portal
+      <!-- CLICKABLE TITLE -->
+
+      <a href="index.html" class="portal-link">
+
+        <div class="title">
+          IC Cashier Monitoring Portal
+        </div>
+
+      </a>
+
+      <div class="subtitle">
+        Administrative Division<br>
+        Cashier Section
       </div>
 
-    </a>
+      <!-- NAVIGATION -->
 
-    <div class="subtitle">
-      Administrative Division<br>
-      Cashier Section
+      <div class="nav">
+
+        <a href="checks-issued.html">
+
+          <button>
+            Checks Issued
+          </button>
+
+        </a>
+
+        <a href="unliquidated-pcf.html">
+
+          <button>
+            Unliquidated PCF CA
+          </button>
+
+        </a>
+
+      </div>
+
     </div>
 
-    <!-- NAVIGATION -->
+    <!-- FOOTER -->
 
-    <div class="nav">
+    <div class="sidebar-footer">
 
-      <a href="checks-issued.html">
-
-        <button>
-          Checks Issued
-        </button>
-
-      </a>
-
-      <a href="unliquidated-pcf.html">
-
-        <button>
-          Unliquidated PCF CA
-        </button>
-
-      </a>
+      Internal Monitoring Portal
+      <br>
+      For Administrative Use Only
 
     </div>
 
@@ -346,7 +386,7 @@ body{
         Section of the Insurance Commission.
         <br><br>
         Please select a monitoring module from the navigation
-        panel to access the corresponding dashboards. 
+        panel to access the corresponding dashboards and reports.
 
       </div>
 
