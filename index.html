@@ -77,11 +77,19 @@
 
     /* DASHBOARD */
 
+    .iframe-container{
+      height:calc(100vh - 70px);
+      overflow:hidden;
+      background:white;
+    }
+
     iframe{
       width:100vw;
-      height:calc(100vh - 70px);
+      height:calc(100vh - 70px + 40px);
       border:none;
       background:white;
+
+      margin-bottom:-40px;
     }
 
     /* MOBILE RESPONSIVE */
@@ -102,8 +110,12 @@
         font-size:16px;
       }
 
-      iframe{
+      .iframe-container{
         height:calc(100vh - 60px);
+      }
+
+      iframe{
+        height:calc(100vh - 60px + 40px);
       }
 
     }
@@ -140,10 +152,14 @@
 
 <!-- DASHBOARD -->
 
+<div class="iframe-container">
+
 <iframe
 onload="hideLoader()"
 src="https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={8404afc2-e4dc-4752-977f-1a2d695aa547}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False">
 </iframe>
+
+</div>
 
 <script>
 
