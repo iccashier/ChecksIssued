@@ -3,185 +3,131 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>IC Cashier Monitoring Portal</title>
+<title>IC Cashier Monitoring Portal</title>
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
-      font-family:Arial, sans-serif;
-      background:#121212;
-      overflow:hidden;
-    }
+body{
+  font-family:Arial, sans-serif;
+  background:#121212;
+  color:white;
+}
 
-    /* LOADING SCREEN */
+.container{
+  display:flex;
+  height:100vh;
+}
 
-    #loader{
-      position:fixed;
-      width:100%;
-      height:100%;
-      background:#121212;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      z-index:9999;
-      flex-direction:column;
-      color:white;
-    }
+/* SIDEBAR */
 
-    .spinner{
-      border:6px solid #333;
-      border-top:6px solid #7B61FF;
-      border-radius:50%;
-      width:60px;
-      height:60px;
-      animation:spin 1s linear infinite;
-      margin-bottom:20px;
-    }
+.sidebar{
+  width:240px;
+  background:#1E1E1E;
+  padding:20px;
+  border-right:1px solid #2E2E2E;
+}
 
-    @keyframes spin{
-      0%{ transform:rotate(0deg); }
-      100%{ transform:rotate(360deg); }
-    }
+.logo{
+  width:70px;
+  margin-bottom:20px;
+}
 
-    /* MAIN LAYOUT */
+.title{
+  font-size:24px;
+  font-weight:bold;
+  line-height:1.3;
+  margin-bottom:40px;
+}
 
-    .container{
-      display:flex;
-      height:100vh;
-    }
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 
-    /* SIDEBAR */
+.nav a{
+  text-decoration:none;
+}
 
-    .sidebar{
-      width:220px;
-      background:#1E1E1E;
-      border-right:1px solid #2E2E2E;
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-    }
+.nav button{
+  width:100%;
+  padding:14px;
+  border:none;
+  background:#2E2E2E;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:14px;
+  text-align:left;
+}
 
-    /* BRANDING */
+.nav button:hover{
+  background:#7B61FF;
+}
 
-    .branding{
-      margin-bottom:30px;
-    }
+/* CONTENT */
 
-    .logo{
-      width:60px;
-      margin-bottom:15px;
-    }
+.content{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
 
-    .title{
-      color:white;
-      font-size:26px;
-      font-weight:bold;
-      line-height:1.3;
-    }
+.welcome-box{
+  max-width:700px;
+}
 
-    /* NAVIGATION */
+.welcome-box h1{
+  font-size:42px;
+  margin-bottom:20px;
+}
 
-    .nav{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
+.welcome-box p{
+  font-size:18px;
+  line-height:1.8;
+  color:#D0D0D0;
+}
 
-    .nav button{
-      width:100%;
-      padding:14px;
-      border:none;
-      background:#2E2E2E;
-      color:white;
-      border-radius:10px;
-      cursor:pointer;
-      transition:0.3s;
-      font-size:14px;
-      text-align:left;
-    }
+@media(max-width:768px){
 
-    .nav button:hover{
-      background:#7B61FF;
-    }
+  .container{
+    flex-direction:column;
+  }
 
-    /* DASHBOARD AREA */
+  .sidebar{
+    width:100%;
+    border-right:none;
+    border-bottom:1px solid #2E2E2E;
+  }
 
-    .dashboard{
-      flex:1;
-      overflow:hidden;
-      background:white;
+  .content{
+    align-items:flex-start;
+    padding:30px;
+  }
 
-      display:flex;
-      align-items:flex-start;
-      justify-content:flex-start;
-    }
+  .welcome-box h1{
+    font-size:32px;
+  }
 
-    iframe{
-      width:100%;
-      height:calc(100vh + 120px);
-      border:none;
+}
 
-      margin-bottom:-120px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:768px){
-
-      .container{
-        flex-direction:column;
-      }
-
-      .sidebar{
-        width:100%;
-        height:auto;
-        border-right:none;
-        border-bottom:1px solid #2E2E2E;
-      }
-
-      .title{
-        font-size:20px;
-      }
-
-      .nav{
-        flex-direction:row;
-        overflow-x:auto;
-      }
-
-      .nav button{
-        min-width:200px;
-      }
-
-      iframe{
-        height:calc(100vh + 120px);
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
 <body>
-
-<!-- LOADING -->
-
-<div id="loader">
-
-  <div class="spinner"></div>
-
-  <div>Loading Monitoring Portal...</div>
-
-</div>
 
 <div class="container">
 
@@ -189,79 +135,51 @@
 
   <div class="sidebar">
 
-    <!-- BRANDING -->
+    <img
+      class="logo"
+      src="https://www.insurance.gov.ph/wp-content/uploads/2022/01/IC-logo-white-1.png">
 
-    <div class="branding">
-
-      <img 
-        class="logo"
-        src="https://www.insurance.gov.ph/wp-content/uploads/2022/01/IC-logo-white-1.png">
-
-      <div class="title">
-        IC Cashier Monitoring Portal
-      </div>
-
+    <div class="title">
+      IC Cashier Monitoring Portal
     </div>
-
-    <!-- NAVIGATION -->
 
     <div class="nav">
 
-      <button onclick="loadChecksIssued()">
-        Checks Issued
-      </button>
+      <a href="checks-issued.html">
+        <button>Checks Issued</button>
+      </a>
 
-      <button onclick="loadPCF()">
-        Unliquidated PCF CA
-      </button>
+      <a href="unliquidated-pcf.html">
+        <button>Unliquidated PCF CA</button>
+      </a>
 
     </div>
 
   </div>
 
-  <!-- DASHBOARD -->
+  <!-- CONTENT -->
 
-  <div class="dashboard">
+  <div class="content">
 
-    <iframe
-    id="dashboardFrame"
-    onload="hideLoader()"
-    src="https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={8404afc2-e4dc-4752-977f-1a2d695aa547}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False">
-    </iframe>
+    <div class="welcome-box">
+
+      <h1>
+        Welcome to IC Cashier Monitoring Portal
+      </h1>
+
+      <p>
+        This portal serves as the centralized monitoring platform
+        for the Cashier Section of the Insurance Commission.
+        <br><br>
+        Please select a monitoring module from the navigation panel
+        to access the corresponding dashboard and reports.
+      </p>
+
+    </div>
 
   </div>
 
 </div>
-
-<script>
-
-  function hideLoader(){
-    document.getElementById("loader").style.display = "none";
-  }
-
-  function showLoader(){
-    document.getElementById("loader").style.display = "flex";
-  }
-
-  function loadChecksIssued(){
-
-    showLoader();
-
-    document.getElementById("dashboardFrame").src =
-    "https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={8404afc2-e4dc-4752-977f-1a2d695aa547}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False";
-
-  }
-
-  function loadPCF(){
-
-    showLoader();
-
-    document.getElementById("dashboardFrame").src =
-    "https://insurancegovph-my.sharepoint.com/personal/rs_nunez_insurance_gov_ph/_layouts/15/Doc.aspx?sourcedoc={3732ca75-2b7f-4b97-82fd-79c100b519ca}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=False&ActiveCell='UNLIQUIDATED PCF CA'!A1";
-
-  }
-
-</script>
 
 </body>
 
