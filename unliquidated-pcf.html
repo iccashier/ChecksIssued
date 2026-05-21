@@ -37,13 +37,32 @@ body{
   padding:0 20px;
 
   border-bottom:1px solid #2E2E2E;
+
+  gap:20px;
 }
 
-/* CLICKABLE TITLE */
+/* HOME BUTTON */
 
-.portal-link{
+.home-btn{
+
   text-decoration:none;
+
   color:white;
+
+  background:rgba(255,255,255,0.08);
+
+  padding:10px 18px;
+
+  border-radius:12px;
+
+  transition:0.3s;
+
+  font-size:14px;
+}
+
+.home-btn:hover{
+
+  background:rgba(255,255,255,0.15);
 }
 
 /* TITLE */
@@ -79,15 +98,17 @@ iframe{
 
 <div class="header">
 
-  <!-- CLICKABLE TITLE -->
+  <!-- HOME BUTTON -->
 
-  <a href="index.html" class="portal-link">
-
-    <div class="title">
-      Unliquidated PCF CA
-    </div>
-
+  <a href="index.html" class="home-btn">
+    ← Home
   </a>
+
+  <!-- TITLE -->
+
+  <div class="title">
+    Unliquidated PCF CA
+  </div>
 
 </div>
 
