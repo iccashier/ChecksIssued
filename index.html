@@ -161,44 +161,6 @@ body{
   color:#E5E7EB;
 }
 
-.card-container{
-  display:flex;
-  gap:25px;
-  flex-wrap:wrap;
-}
-
-.dashboard-card{
-  flex:1;
-  min-width:300px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.12);
-  border-radius:20px;
-  padding:30px;
-  text-decoration:none;
-  color:white;
-  transition:.3s;
-}
-
-.dashboard-card:hover{
-  transform:translateY(-5px);
-  background:rgba(255,255,255,0.15);
-}
-
-.card-number{
-  font-size:60px;
-  font-weight:bold;
-  margin-bottom:15px;
-}
-
-.card-title{
-  font-size:22px;
-  margin-bottom:15px;
-}
-
-.card-link{
-  color:#FFD700;
-}
-
 .sidebar-footer{
   font-size:12px;
   color:rgba(255,255,255,0.55);
@@ -208,15 +170,27 @@ body{
 }
 
 @media(max-width:768px){
-  .container{flex-direction:column;}
+  .container{
+    flex-direction:column;
+  }
+
   .sidebar{
     width:100%;
     border-right:none;
     border-bottom:1px solid rgba(255,255,255,0.1);
   }
-  .content{padding:25px;}
-  .page-title{font-size:36px;}
-  .description{font-size:18px;}
+
+  .content{
+    padding:25px;
+  }
+
+  .page-title{
+    font-size:36px;
+  }
+
+  .description{
+    font-size:18px;
+  }
 }
 </style>
 </head>
@@ -230,7 +204,9 @@ body{
 <div class="sidebar-top">
 
 <a href="index.html" class="portal-link">
-<div class="title">IC Cashier Portal</div>
+<div class="title">
+IC Cashier Portal
+</div>
 </a>
 
 <div class="subtitle">
@@ -240,27 +216,58 @@ Cashier Section
 
 <div class="nav">
 
-<a href="checks-issued.html"><button>Checks Issued for Collection</button></a>
+<a href="checks-issued.html">
+<button>
+Checks Issued for Collection
+</button>
+</a>
 
-<a href="unliquidated-pcf.html"><button>Unliquidated Petty Cash Advances</button></a>
+<a href="unliquidated-pcf.html">
+<button>
+Unliquidated Petty Cash Advances
+</button>
+</a>
 
-<button onclick="toggleGuide()">▼ Petty Cash Requests Guide</button>
+<button onclick="toggleGuide()">
+▼ Petty Cash Requests Guide
+</button>
 
 <div id="guideMenu" class="submenu">
 
-<a href="petty-cash-advance.html"><button class="sub-btn">• Petty Cash Advance Request</button></a>
+<a href="petty-cash-advance.html">
+<button class="sub-btn">
+• Petty Cash Advance Request
+</button>
+</a>
 
-<a href="petty-cash-liquidation.html"><button class="sub-btn">• Petty Cash Advance Liquidation</button></a>
+<a href="petty-cash-liquidation.html">
+<button class="sub-btn">
+• Petty Cash Advance Liquidation
+</button>
+</a>
 
-<a href="petty-cash-reimbursement.html"><button class="sub-btn">• Petty Cash Reimbursement</button></a>
+<a href="petty-cash-reimbursement.html">
+<button class="sub-btn">
+• Petty Cash Reimbursement
+</button>
+</a>
 
 </div>
 
-<a href="citizens-charter.html"><button>IC Cashier Citizen's Charter</button></a>
+<a href="citizens-charter.html">
+<button>
+IC Cashier Citizen's Charter
+</button>
+</a>
 
-<a href="downloadable-forms.html"><button>Downloadable Forms</button></a>
+<a href="downloadable-forms.html">
+<button>
+Downloadable Forms
+</button>
+</a>
 
 </div>
+
 </div>
 
 <div class="sidebar-footer">
@@ -274,45 +281,46 @@ For IC Personnel Use Only
 
 <div class="dashboard-panel">
 
-<div class="page-title">IC Cashier Portal</div>
+<div class="page-title">
+IC Cashier Portal
+</div>
 
 <div class="accent-line"></div>
 
 <div class="glass-card">
-<div class="section-title">About the Portal</div>
+
+<div class="section-title">
+About the Portal
+</div>
 
 <div class="description">
+
 This portal serves as a centralized platform for IC personnel to access Cashier Section services, transaction information, documentary requirements, reference materials, downloadable forms, and other cashier-related resources.
+
 <br><br>
+
 Select a module from the navigation panel to view the available information.
-</div>
-</div>
-
-<div class="glass-card">
-<div class="section-title">Overview</div>
-
-<div class="card-container">
-
-<a href="checks-issued.html" class="dashboard-card">
-<div class="card-number">--</div>
-<div class="card-title">Checks Issued for Collection</div>
-<div class="card-link">View Monitoring →</div>
-</a>
-
-<a href="unliquidated-pcf.html" class="dashboard-card">
-<div class="card-number">--</div>
-<div class="card-title">Unliquidated Petty Cash Advances</div>
-<div class="card-link">View Monitoring →</div>
-</a>
 
 </div>
+
 </div>
 
 <div class="glass-card">
-<div class="section-title">Advisories</div>
+
+<div class="section-title">
+Advisories
+</div>
+
 <div class="description">
+
 There are currently no active advisories from the Cashier Section.
+
+<br><br>
+
+Future announcements, reminders, system updates, and Cashier Section notices will be posted here.
+
 </div>
+
 </div>
 
 </div>
@@ -324,6 +332,7 @@ There are currently no active advisories from the Cashier Section.
 <script>
 function toggleGuide(){
   var menu=document.getElementById("guideMenu");
+
   if(menu.style.display==="block"){
     menu.style.display="none";
   }else{
