@@ -99,13 +99,9 @@ body{
   gap:15px;
 }
 
-/* LINKS */
-
 .nav a{
   text-decoration:none;
 }
-
-/* BUTTONS */
 
 .nav button{
 
@@ -142,7 +138,48 @@ body{
 
   box-shadow:
   0 0 25px rgba(255,215,0,0.25);
+}
 
+/* DROPDOWN */
+
+.submenu{
+  display:none;
+  margin-left:15px;
+  margin-top:-5px;
+}
+
+.sub-btn{
+
+  width:100%;
+
+  padding:12px;
+
+  margin-top:8px;
+
+  border:none;
+
+  background:rgba(255,255,255,0.05);
+
+  color:white;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  font-size:14px;
+
+  text-align:left;
+
+  transition:0.3s;
+}
+
+.sub-btn:hover{
+
+  background:rgba(255,255,255,0.15);
+}
+
+.dropdown-btn{
+  width:100%;
 }
 
 /* MAIN CONTENT */
@@ -290,11 +327,7 @@ body{
 
 <div class="container">
 
-  <!-- SIDEBAR -->
-
   <div class="sidebar">
-
-    <!-- TOP SIDEBAR -->
 
     <div class="sidebar-top">
 
@@ -313,31 +346,55 @@ body{
 
       <div class="nav">
 
-  <a href="checks-issued.html">
+        <a href="checks-issued.html">
 
-    <button>
-      Checks Issued for Collection
-    </button>
+          <button>
+            Checks Issued for Collection
+          </button>
 
-  </a>
+        </a>
 
-  <a href="unliquidated-pcf.html">
+        <a href="unliquidated-pcf.html">
 
-    <button>
-      Unliquidated Petty Cash Advances
-    </button>
+          <button>
+            Unliquidated Petty Cash Advances
+          </button>
 
-  </a>
+        </a>
 
-  <a href="petty-cash-guide.html">
+        <button class="dropdown-btn" onclick="toggleGuide()">
+          ▼ Petty Cash Requests Guide
+        </button>
 
-    <button>
-      Petty Cash Requests Guide
-    </button>
+        <div id="guideMenu" class="submenu">
 
-  </a>
+          <a href="petty-cash-advance.html">
 
-</div>
+            <button class="sub-btn">
+              • Petty Cash Advance
+            </button>
+
+          </a>
+
+          <a href="petty-cash-reimbursement.html">
+
+            <button class="sub-btn">
+              • Petty Cash Reimbursement
+            </button>
+
+          </a>
+
+          <a href="petty-cash-liquidation.html">
+
+            <button class="sub-btn">
+              • Petty Cash Advance Liquidation
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -351,8 +408,6 @@ body{
 
   </div>
 
-  <!-- MAIN CONTENT -->
-
   <div class="content">
 
     <div class="welcome-box">
@@ -365,7 +420,7 @@ body{
 
       <div class="description">
 
-        This portal serves as a centralized platform for IC personnel to access the IC Cashier Section services, monitor the status of checks issued for collection and outstanding petty cash advances, and obtain information on documentary requirements and other cashier-related processes.
+        This portal serves as a centralized platform for IC personnel to access Cashier Section services, check the status of checks issued for collection and outstanding petty cash advances, and obtain information on documentary requirements, procedures, and other cashier-related services.
 
         <br><br>
 
@@ -378,6 +433,26 @@ body{
   </div>
 
 </div>
+
+<script>
+
+function toggleGuide(){
+
+  var menu = document.getElementById("guideMenu");
+
+  if(menu.style.display === "block"){
+
+    menu.style.display = "none";
+
+  } else {
+
+    menu.style.display = "block";
+
+  }
+
+}
+
+</script>
 
 </body>
 
